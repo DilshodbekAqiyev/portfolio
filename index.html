@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title id="page-title"
-      >Dilshodbek Aqiyev - Full-Stack Developer &amp; UI/UX Enthusiast |
+    <title
+      >Dilshodbek Aqiyev | Full-Stack Developer, React & Node.js
       Portfolio</title
     >
     <meta
@@ -20,6 +20,14 @@
       name="keywords"
       id="meta-keywords"
       content="web developer, full-stack developer, react developer, next.js developer, UI/UX developer, o'zbekiston, toshkent, web design, frontend, backend, mobile development, portfolio" />
+    <meta
+      name="description"
+      content="Professional full-stack web developer. React, Next.js, Node.js bilan 5+ yillik tajriba. Innovatsion web yechimlar." />
+    <meta
+      name="keywords"
+      content="full-stack developer, React, Next.js, Node.js, UI/UX, web portfolio, Uzbekistan" />
+    <link rel="canonical" href="https://dilshodbekaqiyev.uz/" />
+
     <meta name="author" content="Dilshodbek Aqiyev" />
     <meta name="robots" content="index, follow" />
     <link
@@ -31,1305 +39,14 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
       rel="stylesheet" />
-    <script src="/_sdk/element_sdk.js"></script>
-    <style>
-      :root {
-        --bg-primary: #0a0a0a;
-        --bg-secondary: #111111;
-        --bg-tertiary: #1a1a1a;
-        --text-primary: #ffffff;
-        --text-secondary: #a0a0a0;
-        --accent-primary: #00ff88;
-        --accent-secondary: #0088ff;
-        --accent-tertiary: #ff0088;
-        --border-color: rgba(255, 255, 255, 0.1);
-        --shadow-glow: rgba(0, 255, 136, 0.3);
-      }
-
-      [data-theme="light"] {
-        --bg-primary: #ffffff;
-        --bg-secondary: #f5f5f5;
-        --bg-tertiary: #e8e8e8;
-        --text-primary: #0a0a0a;
-        --text-secondary: #666666;
-        --accent-primary: #00cc6a;
-        --accent-secondary: #0066cc;
-        --accent-tertiary: #cc0066;
-        --border-color: rgba(0, 0, 0, 0.1);
-        --shadow-glow: rgba(0, 204, 106, 0.3);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont,
-          sans-serif;
-        background: var(--bg-primary);
-        color: var(--text-primary);
-        overflow-x: hidden;
-        line-height: 1.6;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        height: 100%;
-      }
-
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--bg-secondary);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent-primary);
-        border-radius: 4px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-secondary);
-      }
-
-      .grid-background {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        opacity: 0.15;
-        background-image: linear-gradient(
-            var(--border-color) 1px,
-            transparent 1px
-          ),
-          linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-        background-size: 50px 50px;
-        animation: gridMove 20s linear infinite;
-      }
-
-      @keyframes gridMove {
-        0% {
-          transform: translate(0, 0);
-        }
-        100% {
-          transform: translate(50px, 50px);
-        }
-      }
-
-      .glow-orb {
-        position: fixed;
-        width: 600px;
-        height: 600px;
-        border-radius: 50%;
-        filter: blur(100px);
-        opacity: 0.2;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .glow-orb.green {
-        background: var(--accent-primary);
-        top: -200px;
-        left: -200px;
-        animation: float 15s ease-in-out infinite;
-      }
-
-      .glow-orb.blue {
-        background: var(--accent-secondary);
-        bottom: -200px;
-        right: -200px;
-        animation: float 18s ease-in-out infinite reverse;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1);
-        }
-        50% {
-          transform: translate(100px, 100px) scale(1.2);
-        }
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(10, 10, 10, 0.8);
-        backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border-color);
-        transition: background-color 0.3s ease;
-      }
-
-      [data-theme="light"] nav {
-        background: rgba(255, 255, 255, 0.8);
-      }
-
-      .nav-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--accent-primary);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .logo-bracket {
-        color: var(--text-secondary);
-        font-size: 1.8rem;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 3rem;
-        list-style: none;
-        align-items: center;
-      }
-
-      .nav-links a {
-        color: var(--text-secondary);
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .nav-links a::before {
-        content: "// ";
-        color: var(--accent-primary);
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: var(--text-primary);
-      }
-
-      .nav-links a:hover::before {
-        opacity: 1;
-      }
-
-      .nav-controls {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-
-      .theme-toggle,
-      .lang-toggle {
-        width: 45px;
-        height: 45px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-size: 1.3rem;
-      }
-
-      .theme-toggle:hover,
-      .lang-toggle:hover {
-        border-color: var(--accent-primary);
-        transform: scale(1.05);
-      }
-
-      .lang-dropdown {
-        position: relative;
-      }
-
-      .lang-menu {
-        position: absolute;
-        top: 55px;
-        right: 0;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        padding: 0.5rem;
-        display: none;
-        flex-direction: column;
-        gap: 0.3rem;
-        min-width: 120px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      .lang-menu.active {
-        display: flex;
-      }
-
-      .lang-option {
-        padding: 0.6rem 1rem;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .lang-option:hover {
-        background: var(--bg-tertiary);
-        color: var(--text-primary);
-      }
-
-      .lang-option.active {
-        background: var(--accent-primary);
-        color: var(--bg-primary);
-        font-weight: 600;
-      }
-
-      .nav-cta {
-        padding: 0.8rem 1.8rem;
-        background: transparent;
-        border: 2px solid var(--accent-primary);
-        color: var(--accent-primary) !important;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-      }
-
-      .nav-cta::before {
-        content: "";
-      }
-
-      .nav-cta:hover {
-        background: var(--accent-primary);
-        color: var(--bg-primary) !important;
-        box-shadow: 0 0 30px var(--shadow-glow);
-      }
-
-      .hero {
-        min-height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 8rem 2rem 4rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      .hero-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      .hero-content {
-        max-width: 900px;
-      }
-
-      .hero-tag {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--accent-primary);
-        font-size: 0.9rem;
-        margin-bottom: 2rem;
-        display: inline-block;
-      }
-
-      .hero-tag::before {
-        content: "$ ";
-      }
-
-      .hero-title {
-        font-size: clamp(3rem, 8vw, 6rem);
-        font-weight: 700;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-        letter-spacing: -2px;
-      }
-
-      .gradient-text {
-        background: linear-gradient(
-          135deg,
-          var(--accent-primary) 0%,
-          var(--accent-secondary) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .hero-subtitle-container {
-        font-size: clamp(1.3rem, 3vw, 2rem);
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
-        min-height: 3rem;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .hero-subtitle-static {
-        color: var(--text-secondary);
-        font-weight: 500;
-      }
-
-      .hero-subtitle-animated {
-        background: linear-gradient(
-          135deg,
-          var(--accent-primary) 0%,
-          var(--accent-secondary) 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        font-weight: 700;
-        min-width: 2ch;
-        display: inline-block;
-      }
-
-      .typing-cursor {
-        color: var(--accent-primary);
-        font-weight: 400;
-        animation: blink 1s step-end infinite;
-        margin-left: 2px;
-      }
-
-      @keyframes blink {
-        0%,
-        50% {
-          opacity: 1;
-        }
-        51%,
-        100% {
-          opacity: 0;
-        }
-      }
-
-      .hero-description {
-        font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-        color: var(--text-secondary);
-        margin-bottom: 3rem;
-        line-height: 1.7;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        margin-bottom: 4rem;
-      }
-
-      .btn {
-        padding: 1.2rem 2.5rem;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        border: none;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
-
-      .btn-primary {
-        background: var(--accent-primary);
-        color: var(--bg-primary);
-        box-shadow: 0 0 30px var(--shadow-glow);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 50px var(--shadow-glow);
-      }
-
-      .btn-secondary {
-        background: transparent;
-        color: var(--text-primary);
-        border: 2px solid var(--border-color);
-      }
-
-      .btn-secondary:hover {
-        border-color: var(--accent-primary);
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-
-      .stat-card {
-        background: var(--bg-secondary);
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-      }
-
-      .stat-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-5px);
-      }
-
-      .stat-number {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--accent-primary);
-        margin-bottom: 0.5rem;
-      }
-
-      .stat-label {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-      }
-
-      .experience,
-      .education,
-      .services,
-      .cases,
-      .reviews,
-      .about {
-        padding: 8rem 2rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      .experience-container,
-      .education-container,
-      .services-container,
-      .cases-container,
-      .reviews-container {
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      /* Timeline Styles */
-      .timeline {
-        position: relative;
-        margin-top: 4rem;
-        padding-left: 3rem;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(
-          180deg,
-          var(--accent-primary) 0%,
-          var(--accent-secondary) 100%
-        );
-      }
-
-      .timeline-item {
-        position: relative;
-        margin-bottom: 4rem;
-        padding-left: 2rem;
-      }
-
-      .timeline-dot {
-        position: absolute;
-        left: -3.5rem;
-        top: 0;
-        width: 16px;
-        height: 16px;
-        background: var(--accent-primary);
-        border-radius: 50%;
-        border: 3px solid var(--bg-primary);
-        box-shadow: 0 0 20px var(--shadow-glow);
-      }
-
-      .timeline-content {
-        background: var(--bg-secondary);
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-      }
-
-      .timeline-content:hover {
-        border-color: var(--accent-primary);
-        transform: translateX(10px);
-        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
-      }
-
-      .timeline-date {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--accent-primary);
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .timeline-company {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .timeline-description {
-        color: var(--text-secondary);
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      .timeline-tags {
-        display: flex;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-      }
-
-      .tag {
-        padding: 0.4rem 1rem;
-        background: var(--bg-tertiary);
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        font-size: 0.85rem;
-        color: var(--accent-primary);
-        font-family: "JetBrains Mono", monospace;
-      }
-
-      /* Education Styles */
-      .education-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-
-      .education-card {
-        background: var(--bg-secondary);
-        padding: 2.5rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-        text-align: center;
-      }
-
-      .education-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-10px);
-        box-shadow: 0 15px 50px rgba(0, 255, 136, 0.15);
-      }
-
-      .education-icon {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .education-degree {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--accent-primary);
-        font-size: 0.9rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .education-major {
-        font-size: 1.4rem;
-        font-weight: 600;
-        margin-bottom: 0.8rem;
-      }
-
-      .education-school {
-        color: var(--text-secondary);
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .education-year {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--text-secondary);
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-      }
-
-      .education-desc {
-        color: var(--text-secondary);
-        font-size: 0.95rem;
-        line-height: 1.6;
-      }
-
-      /* Services Styles */
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-
-      .service-card {
-        background: var(--bg-secondary);
-        padding: 2.5rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .service-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-10px);
-        box-shadow: 0 15px 50px rgba(0, 255, 136, 0.15);
-      }
-
-      .service-card.featured {
-        border-color: var(--accent-primary);
-        background: linear-gradient(
-          135deg,
-          rgba(0, 255, 136, 0.05) 0%,
-          rgba(0, 136, 255, 0.05) 100%
-        );
-      }
-
-      .featured-badge {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        padding: 0.4rem 1rem;
-        background: var(--accent-primary);
-        color: var(--bg-primary);
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-
-      .service-icon {
-        font-size: 3rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .service-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .service-description {
-        color: var(--text-secondary);
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      .service-features {
-        list-style: none;
-        margin-bottom: 2rem;
-      }
-
-      .service-features li {
-        padding: 0.6rem 0;
-        padding-left: 1.8rem;
-        position: relative;
-        color: var(--text-secondary);
-      }
-
-      .service-features li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: var(--accent-primary);
-        font-weight: 700;
-      }
-
-      .service-price {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--accent-primary);
-        text-align: center;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-      }
-
-      /* Cases Styles */
-      .cases-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-        gap: 2.5rem;
-        margin-top: 4rem;
-      }
-
-      .case-card {
-        background: var(--bg-secondary);
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        overflow: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .case-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-10px);
-        box-shadow: 0 15px 50px rgba(0, 255, 136, 0.15);
-      }
-
-      .case-image {
-        height: 250px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .case-overlay {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .case-card:hover .case-overlay {
-        opacity: 1;
-      }
-
-      .case-view {
-        color: var(--accent-primary);
-        font-weight: 600;
-        font-size: 1.2rem;
-      }
-
-      .case-content {
-        padding: 2rem;
-      }
-
-      .case-category {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--accent-primary);
-        font-size: 0.85rem;
-        margin-bottom: 0.8rem;
-      }
-
-      .case-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .case-description {
-        color: var(--text-secondary);
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-      }
-
-      .case-tags {
-        display: flex;
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-      }
-
-      .case-stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--border-color);
-      }
-
-      .case-stat {
-        text-align: center;
-      }
-
-      .stat-value {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--accent-primary);
-        margin-bottom: 0.3rem;
-      }
-
-      .stat-label {
-        color: var(--text-secondary);
-        font-size: 0.85rem;
-      }
-
-      /* Reviews Styles */
-      .reviews-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-
-      .review-card {
-        background: var(--bg-secondary);
-        padding: 2.5rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-      }
-
-      .review-card:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
-      }
-
-      .review-stars {
-        color: #ffc107;
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-        letter-spacing: 3px;
-      }
-
-      .review-text {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        margin-bottom: 2rem;
-        font-size: 1.05rem;
-      }
-
-      .review-author {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .author-avatar {
-        width: 50px;
-        height: 50px;
-        background: var(--bg-tertiary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        border: 2px solid var(--border-color);
-      }
-
-      .author-name {
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-      }
-
-      .author-position {
-        color: var(--text-secondary);
-        font-size: 0.9rem;
-      }
-
-      .about {
-        padding: 8rem 2rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      .about-container {
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      .section-header {
-        margin-bottom: 5rem;
-      }
-
-      .section-tag {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--accent-primary);
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-
-      .section-tag::before {
-        content: "<";
-        color: var(--text-secondary);
-      }
-
-      .section-tag::after {
-        content: " />";
-        color: var(--text-secondary);
-      }
-
-      .section-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        letter-spacing: -1px;
-      }
-
-      .section-description {
-        font-size: 1.2rem;
-        color: var(--text-secondary);
-        max-width: 700px;
-        line-height: 1.8;
-      }
-
-      .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-
-      .about-text {
-        font-size: 1.1rem;
-        line-height: 1.9;
-        color: var(--text-secondary);
-      }
-
-      .about-text p {
-        margin-bottom: 1.5rem;
-      }
-
-      .highlight {
-        color: var(--accent-primary);
-        font-weight: 600;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .skill-item {
-        background: var(--bg-secondary);
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-        cursor: pointer;
-      }
-
-      .skill-item:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.1);
-      }
-
-      .skill-header {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .skill-icon {
-        font-size: 2rem;
-      }
-
-      .skill-name {
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
-
-      .skill-list {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .skill-list li {
-        color: var(--text-secondary);
-        padding: 0.4rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-      }
-
-      .skill-list li::before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: var(--accent-primary);
-        font-size: 1.2rem;
-      }
-
-      .contact {
-        padding: 8rem 2rem;
-        position: relative;
-        z-index: 10;
-      }
-
-      .contact-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .contact-content {
-        margin-top: 4rem;
-        display: grid;
-        grid-template-columns: 1fr 1.5fr;
-        gap: 4rem;
-      }
-
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .contact-method {
-        background: var(--bg-secondary);
-        padding: 2rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: var(--text-primary);
-      }
-
-      .contact-method:hover {
-        border-color: var(--accent-primary);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 40px rgba(0, 255, 136, 0.15);
-      }
-
-      .contact-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        display: block;
-      }
-
-      .contact-label {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        margin-bottom: 0.5rem;
-      }
-
-      .contact-value {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 1.1rem;
-        color: var(--accent-primary);
-      }
-
-      .contact-form {
-        background: var(--bg-secondary);
-        padding: 3rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-color);
-      }
-
-      .form-group {
-        margin-bottom: 2rem;
-      }
-
-      .form-label {
-        display: block;
-        margin-bottom: 0.8rem;
-        font-weight: 500;
-        color: var(--text-primary);
-      }
-
-      .form-input,
-      .form-textarea {
-        width: 100%;
-        padding: 1rem 1.5rem;
-        background: var(--bg-tertiary);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        color: var(--text-primary);
-        font-family: inherit;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-      }
-
-      .form-input:focus,
-      .form-textarea:focus {
-        outline: none;
-        border-color: var(--accent-primary);
-        box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
-      }
-
-      .form-textarea {
-        resize: vertical;
-        min-height: 150px;
-      }
-
-      .form-button {
-        width: 100%;
-        padding: 1.3rem;
-        background: var(--accent-primary);
-        color: var(--bg-primary);
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.1rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.8rem;
-      }
-
-      .form-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 40px var(--shadow-glow);
-      }
-
-      .form-button:disabled {
-        opacity: 0.6;
-        cursor: not-allowed;
-        transform: none;
-      }
-
-      .form-message {
-        margin-top: 1.5rem;
-        padding: 1rem 1.5rem;
-        border-radius: 8px;
-        display: none;
-      }
-
-      .form-message.success {
-        background: rgba(0, 255, 136, 0.1);
-        border: 1px solid var(--accent-primary);
-        color: var(--accent-primary);
-        display: block;
-      }
-
-      .form-message.error {
-        background: rgba(255, 0, 136, 0.1);
-        border: 1px solid var(--accent-tertiary);
-        color: var(--accent-tertiary);
-        display: block;
-      }
-
-      footer {
-        background: var(--bg-primary);
-        padding: 3rem 2rem;
-        border-top: 1px solid var(--border-color);
-        position: relative;
-        z-index: 10;
-      }
-
-      .footer-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-      }
-
-      .footer-text {
-        font-family: "JetBrains Mono", monospace;
-        color: var(--text-secondary);
-        font-size: 0.9rem;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .social-link {
-        width: 50px;
-        height: 50px;
-        background: var(--bg-secondary);
-        border: 1px solid var(--border-color);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-secondary);
-        font-size: 1.5rem;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-
-      .social-link:hover {
-        border-color: var(--accent-primary);
-        color: var(--accent-primary);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 20px rgba(0, 255, 136, 0.2);
-      }
-
-      @media (max-width: 1024px) {
-        .about-content,
-        .contact-content {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .stats-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .timeline {
-          padding-left: 2rem;
-        }
-
-        .timeline-item {
-          padding-left: 1.5rem;
-        }
-
-        .education-grid,
-        .services-grid,
-        .cases-grid,
-        .reviews-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .nav-container {
-          padding: 1rem;
-        }
-
-        .hero {
-          padding: 6rem 1.5rem 3rem;
-        }
-
-        .stats-grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-    <style>
-      @view-transition {
-        navigation: auto;
-      }
-    </style>
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="./index.css" />
     <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
   </head>
   <body>
     <div class="grid-background"></div>
     <div class="glow-orb green"></div>
     <div class="glow-orb blue"></div>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
     <nav>
       <div class="nav-container">
         <div class="logo"
@@ -1337,12 +54,12 @@
           <span id="logo-text">DA</span> <span class="logo-bracket">/&gt;</span>
         </div>
         <ul class="nav-links">
-          <li><a href="#home" data-i18n="nav.home">home</a></li>
+          <li><a href="#home" data-i18n="nav.home" class="active">home</a></li>
           <li><a href="#about" data-i18n="nav.about">about</a></li>
+          <li><a href="#education" data-i18n="nav.education">education</a></li>
           <li
             ><a href="#experience" data-i18n="nav.experience">experience</a></li
           >
-          <li><a href="#education" data-i18n="nav.education">education</a></li>
           <li><a href="#services" data-i18n="nav.services">services</a></li>
           <li><a href="#cases" data-i18n="nav.cases">case studies</a></li>
           <li><a href="#reviews" data-i18n="nav.reviews">reviews</a></li>
@@ -1369,12 +86,58 @@
             <div class="lang-menu" id="langMenu">
               <div class="lang-option" data-lang="uz"> 🇺🇿 O'zbek </div>
               <div class="lang-option" data-lang="ru"> 🇷🇺 Русский </div>
-              <div class="lang-option" data-lang="en"> 🇬🇧 English </div>
+              <div class="lang-option" data-lang="en"> 🇺🇸 English</div>
             </div>
+          </div>
+          <div class="burger-menu" id="burgerMenu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
           </div>
         </div>
       </div>
     </nav>
+    <div class="mobile-sidebar" id="mobileSidebar">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" data-i18n="nav.home" class="active">🏠 home</a></li>
+        <li><a href="#about" data-i18n="nav.about">👤 about</a></li>
+        <li><a href="#education" data-i18n="nav.education">🎓 education</a></li>
+        <li
+          ><a href="#experience" data-i18n="nav.experience"
+            >💼 experience</a
+          ></li
+        >
+        <li><a href="#services" data-i18n="nav.services">🚀 services</a></li>
+        <li><a href="#cases" data-i18n="nav.cases">📁 case studies</a></li>
+        <li><a href="#reviews" data-i18n="nav.reviews">⭐ reviews</a></li>
+        <li
+          ><a href="#contact" class="nav-cta" data-i18n="nav.contact"
+            >📧 contact</a
+          ></li
+        >
+      </ul>
+      <div class="mobile-controls"
+        ><button
+          class="theme-toggle"
+          id="mobileThemeToggle"
+          aria-label="Toggle theme">
+          <span id="mobileThemeIcon">🌙</span>
+        </button>
+        <div class="lang-dropdown"
+          ><button
+            class="lang-toggle"
+            id="mobileLangToggle"
+            aria-label="Change language">
+            <span>🌐</span>
+          </button>
+          <div class="lang-menu" id="mobileLangMenu">
+            <div class="lang-option" data-lang="uz"> 🇺🇿 O'zbek </div>
+            <div class="lang-option" data-lang="ru"> 🇷🇺 Русский </div>
+            <div class="lang-option" data-lang="en"> 🇬🇧 English </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section id="home" class="hero">
       <div class="hero-container">
         <div class="hero-content fade-in-up">
@@ -1387,8 +150,7 @@
             ></h1
           >
           <div class="hero-subtitle-container"
-            ><span class="hero-subtitle-static" data-i18n="hero.staticText"
-              >Men bir
+            ><span class="hero-subtitle-static" data-i18n="hero.staticText">
             </span>
             <span class="hero-subtitle-animated" id="animatedText"></span>
             <span class="typing-cursor">|</span>
@@ -1397,10 +159,10 @@
             >Zamonaviy web va mobil ilovalar yaratish bilan shug'ullanaman.</p
           >
           <div class="hero-buttons"
-            ><a href="#contact" class="btn btn-primary">
-              <span data-i18n="hero.cta1">Xizmatlarim</span> <span>→</span>
+            ><a href="#services" class="btn btn-primary">
+              <h2 data-i18n="hero.cta1">Xizmatlarim</h2> <span>→</span>
             </a>
-            <a href="#about" class="btn btn-secondary">
+            <a href="#contact" class="btn btn-secondary">
               <span data-i18n="hero.cta2">Bog'lanish</span>
             </a>
           </div>
@@ -1429,6 +191,189 @@
                 Mijoz Qoniqishi
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <div class="about-container">
+        <div class="section-header"
+          ><span class="section-tag" data-i18n="about.tag">about</span>
+          <h2 class="section-title" id="about-title" data-i18n="about.title"
+            >Men haqimda</h2
+          >
+          <p
+            class="section-description"
+            id="about-intro"
+            data-i18n="about.description"
+            >Professional full-stack developer va zamonaviy web texnologiyalari
+            mutaxassisi</p
+          >
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p data-i18n="about.text1"
+              >Men <span class="highlight">5+ yillik tajribaga</span> ega
+              full-stack developer bo'lib, zamonaviy web va mobil ilovalar
+              yaratish bilan shug'ullanaman. React, Next.js, Node.js va boshqa
+              ilg'or texnologiyalar yordamida
+              <span class="highlight">innovatsion yechimlar</span> ishlab
+              chiqaman.</p
+            >
+            <p data-i18n="about.text2"
+              >Har bir loyihaga kreativ yondashuv va professional bajarish bilan
+              qarayman. Mijozlar bilan uzoq muddatli hamkorlikni qadrlashaman va
+              ularning biznesini rivojlantirishga yordam beraman.</p
+            >
+          </div>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-header"
+                ><span class="skill-icon">⚛️</span>
+                <span class="skill-name" data-i18n="about.skills.frontend.title"
+                  >Frontend</span
+                >
+              </div>
+              <ul
+                class="skill-list"
+                data-i18n-list="about.skills.frontend.items">
+                <li>React &amp; Next.js</li>
+                <li>TypeScript</li>
+                <li>Tailwind CSS</li>
+                <li>Vue.js</li>
+              </ul>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"
+                ><span class="skill-icon">🔧</span>
+                <span class="skill-name" data-i18n="about.skills.backend.title"
+                  >Backend</span
+                >
+              </div>
+              <ul
+                class="skill-list"
+                data-i18n-list="about.skills.backend.items">
+                <li>Node.js &amp; Express</li>
+                <li>PostgreSQL &amp; MongoDB</li>
+                <li>REST &amp; GraphQL API</li>
+                <li>Redis &amp; WebSocket</li>
+              </ul>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"
+                ><span class="skill-icon">📱</span>
+                <span class="skill-name" data-i18n="about.skills.mobile.title"
+                  >Mobile</span
+                >
+              </div>
+              <ul class="skill-list" data-i18n-list="about.skills.mobile.items">
+                <li>React Native</li>
+                <li>Expo</li>
+                <li>Mobile UI/UX</li>
+                <li>App Deployment</li>
+              </ul>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"
+                ><span class="skill-icon">☁️</span>
+                <span class="skill-name" data-i18n="about.skills.devops.title"
+                  >DevOps</span
+                >
+              </div>
+              <ul class="skill-list" data-i18n-list="about.skills.devops.items">
+                <li>AWS &amp; Vercel</li>
+                <li>Docker &amp; CI/CD</li>
+                <li>Nginx &amp; PM2</li>
+                <li>Git &amp; GitHub Actions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="education" class="education">
+      <div class="education-container">
+        <div class="section-header"
+          ><span class="section-tag" data-i18n="education.tag">education</span>
+          <h2 class="section-title" data-i18n="education.title">Ta'lim</h2>
+          <p class="section-description" data-i18n="education.description"
+            >Akademik ta'lim va professional sertifikatlar</p
+          >
+        </div>
+        <div class="education-grid">
+          <div class="education-card">
+            <div class="education-icon"> 🎓 </div>
+            <div class="education-degree" data-i18n="education.degree1.degree">
+              Bakalavr diplomi
+            </div>
+            <h3 class="education-major" data-i18n="education.degree1.major"
+              >Kompyuter ilmlari va dasturlash texnologiyalari</h3
+            >
+            <div class="education-school" data-i18n="education.degree1.school">
+              Termiz Davlat Universiteti
+            </div>
+            <div class="education-year" data-i18n="education.degree1.year">
+              2022 - 2026
+            </div>
+            <p class="education-desc" data-i18n="education.degree1.description"
+              >Dasturlash, algoritm va ma'lumotlar tuzilmasi, web texnologiyalar
+              asoslari</p
+            >
+          </div>
+          <div class="education-card">
+            <div class="education-icon"> 📜 </div>
+            <div class="education-degree" data-i18n="education.cert1.degree">
+              Sertifikat
+            </div>
+            <h3 class="education-major" data-i18n="education.cert1.major"
+              >Advanced React &amp; Next.js</h3
+            >
+            <div class="education-school" data-i18n="education.cert1.school">
+              Udemy Online Platform
+            </div>
+            <div class="education-year" data-i18n="education.cert1.year">
+              2022
+            </div>
+            <p class="education-desc" data-i18n="education.cert1.description"
+              >Server-side rendering, performance optimization, advanced
+              hooks</p
+            >
+          </div>
+          <div class="education-card">
+            <div class="education-icon"> 🏆 </div>
+            <div class="education-degree" data-i18n="education.cert2.degree">
+              Sertifikat
+            </div>
+            <h3 class="education-major" data-i18n="education.cert2.major"
+              >AWS Cloud Practitioner</h3
+            >
+            <div class="education-school" data-i18n="education.cert2.school">
+              Amazon Web Services
+            </div>
+            <div class="education-year" data-i18n="education.cert2.year">
+              2023
+            </div>
+            <p class="education-desc" data-i18n="education.cert2.description"
+              >Cloud architecture, deployment strategies, scalability</p
+            >
+          </div>
+          <div class="education-card">
+            <div class="education-icon"> 💡 </div>
+            <div class="education-degree" data-i18n="education.cert3.degree">
+              Sertifikat
+            </div>
+            <h3 class="education-major" data-i18n="education.cert3.major"
+              >Full-Stack JavaScript</h3
+            >
+            <div class="education-school" data-i18n="education.cert3.school">
+              freeCodeCamp
+            </div>
+            <div class="education-year" data-i18n="education.cert3.year">
+              2021
+            </div>
+            <p class="education-desc" data-i18n="education.cert3.description"
+              >Node.js, Express, MongoDB, RESTful API design</p
+            >
           </div>
         </div>
       </div>
@@ -1522,93 +467,6 @@
                 <span class="tag">Vue.js</span> <span class="tag">Figma</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="education" class="education">
-      <div class="education-container">
-        <div class="section-header"
-          ><span class="section-tag" data-i18n="education.tag">education</span>
-          <h2 class="section-title" data-i18n="education.title">Ta'lim</h2>
-          <p class="section-description" data-i18n="education.description"
-            >Akademik ta'lim va professional sertifikatlar</p
-          >
-        </div>
-        <div class="education-grid">
-          <div class="education-card">
-            <div class="education-icon"> 🎓 </div>
-            <div class="education-degree" data-i18n="education.degree1.degree">
-              Bakalavr diplomi
-            </div>
-            <h3 class="education-major" data-i18n="education.degree1.major"
-              >Kompyuter ilmlari va dasturlash texnologiyalari</h3
-            >
-            <div class="education-school" data-i18n="education.degree1.school">
-              Termiz Davlat Universiteti
-            </div>
-            <div class="education-year" data-i18n="education.degree1.year">
-              2016 - 2020
-            </div>
-            <p class="education-desc" data-i18n="education.degree1.description"
-              >Dasturlash, algoritm va ma'lumotlar tuzilmasi, web texnologiyalar
-              asoslari</p
-            >
-          </div>
-          <div class="education-card">
-            <div class="education-icon"> 📜 </div>
-            <div class="education-degree" data-i18n="education.cert1.degree">
-              Sertifikat
-            </div>
-            <h3 class="education-major" data-i18n="education.cert1.major"
-              >Advanced React &amp; Next.js</h3
-            >
-            <div class="education-school" data-i18n="education.cert1.school">
-              Udemy Online Platform
-            </div>
-            <div class="education-year" data-i18n="education.cert1.year">
-              2022
-            </div>
-            <p class="education-desc" data-i18n="education.cert1.description"
-              >Server-side rendering, performance optimization, advanced
-              hooks</p
-            >
-          </div>
-          <div class="education-card">
-            <div class="education-icon"> 🏆 </div>
-            <div class="education-degree" data-i18n="education.cert2.degree">
-              Sertifikat
-            </div>
-            <h3 class="education-major" data-i18n="education.cert2.major"
-              >AWS Cloud Practitioner</h3
-            >
-            <div class="education-school" data-i18n="education.cert2.school">
-              Amazon Web Services
-            </div>
-            <div class="education-year" data-i18n="education.cert2.year">
-              2023
-            </div>
-            <p class="education-desc" data-i18n="education.cert2.description"
-              >Cloud architecture, deployment strategies, scalability</p
-            >
-          </div>
-          <div class="education-card">
-            <div class="education-icon"> 💡 </div>
-            <div class="education-degree" data-i18n="education.cert3.degree">
-              Sertifikat
-            </div>
-            <h3 class="education-major" data-i18n="education.cert3.major"
-              >Full-Stack JavaScript</h3
-            >
-            <div class="education-school" data-i18n="education.cert3.school">
-              freeCodeCamp
-            </div>
-            <div class="education-year" data-i18n="education.cert3.year">
-              2021
-            </div>
-            <p class="education-desc" data-i18n="education.cert3.description"
-              >Node.js, Express, MongoDB, RESTful API design</p
-            >
           </div>
         </div>
       </div>
@@ -2040,102 +898,6 @@
         </div>
       </div>
     </section>
-    <section id="about" class="about">
-      <div class="about-container">
-        <div class="section-header"
-          ><span class="section-tag" data-i18n="about.tag">about</span>
-          <h2 class="section-title" id="about-title" data-i18n="about.title"
-            >Men haqimda</h2
-          >
-          <p
-            class="section-description"
-            id="about-intro"
-            data-i18n="about.description"
-            >Professional full-stack developer va zamonaviy web texnologiyalari
-            mutaxassisi</p
-          >
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <p data-i18n="about.text1"
-              >Men <span class="highlight">5+ yillik tajribaga</span> ega
-              full-stack developer bo'lib, zamonaviy web va mobil ilovalar
-              yaratish bilan shug'ullanaman. React, Next.js, Node.js va boshqa
-              ilg'or texnologiyalar yordamida
-              <span class="highlight">innovatsion yechimlar</span> ishlab
-              chiqaman.</p
-            >
-            <p data-i18n="about.text2"
-              >Har bir loyihaga kreativ yondashuv va professional bajarish bilan
-              qarayman. Mijozlar bilan uzoq muddatli hamkorlikni qadrlashaman va
-              ularning biznesini rivojlantirishga yordam beraman.</p
-            >
-          </div>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-header"
-                ><span class="skill-icon">⚛️</span>
-                <span class="skill-name" data-i18n="about.skills.frontend.title"
-                  >Frontend</span
-                >
-              </div>
-              <ul
-                class="skill-list"
-                data-i18n-list="about.skills.frontend.items">
-                <li>React &amp; Next.js</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
-                <li>Vue.js</li>
-              </ul>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header"
-                ><span class="skill-icon">🔧</span>
-                <span class="skill-name" data-i18n="about.skills.backend.title"
-                  >Backend</span
-                >
-              </div>
-              <ul
-                class="skill-list"
-                data-i18n-list="about.skills.backend.items">
-                <li>Node.js &amp; Express</li>
-                <li>PostgreSQL &amp; MongoDB</li>
-                <li>REST &amp; GraphQL API</li>
-                <li>Redis &amp; WebSocket</li>
-              </ul>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header"
-                ><span class="skill-icon">📱</span>
-                <span class="skill-name" data-i18n="about.skills.mobile.title"
-                  >Mobile</span
-                >
-              </div>
-              <ul class="skill-list" data-i18n-list="about.skills.mobile.items">
-                <li>React Native</li>
-                <li>Expo</li>
-                <li>Mobile UI/UX</li>
-                <li>App Deployment</li>
-              </ul>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header"
-                ><span class="skill-icon">☁️</span>
-                <span class="skill-name" data-i18n="about.skills.devops.title"
-                  >DevOps</span
-                >
-              </div>
-              <ul class="skill-list" data-i18n-list="about.skills.devops.items">
-                <li>AWS &amp; Vercel</li>
-                <li>Docker &amp; CI/CD</li>
-                <li>Nginx &amp; PM2</li>
-                <li>Git &amp; GitHub Actions</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="contact" class="contact">
       <div class="contact-container">
         <div class="section-header"
@@ -2154,7 +916,8 @@
               <span class="contact-icon">📧</span>
               <div class="contact-label" data-i18n="contact.email"> Email </div>
               <div class="contact-value" id="contact-email-value">
-                info@dilshodbekaqiyev.uz
+                info@dilshodbekaqiyev.uz <br />
+                dilshodjonaqiyev@gmail.com
               </div></a
             >
             <a
@@ -2166,7 +929,7 @@
                 Telefon
               </div>
               <div class="contact-value" id="contact-phone-value">
-                +998 90 123 45 67
+                +998 88 969 88 84
               </div></a
             >
             <a
@@ -2194,21 +957,7 @@
                 GitHub
               </div>
               <div class="contact-value" id="contact-github-value">
-                dilshodbekaqiyev
-              </div></a
-            >
-            <a
-              href="https://linkedin.com/in/dilshodbekaqiyev"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-method"
-              id="contact-linkedin-card">
-              <span class="contact-icon">💼</span>
-              <div class="contact-label" data-i18n="contact.linkedin">
-                LinkedIn
-              </div>
-              <div class="contact-value" id="contact-linkedin-value">
-                dilshodbekaqiyev
+                Dilshodbekaqiyev
               </div></a
             >
           </div>
@@ -2314,1245 +1063,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      // Translations
-      const translations = {
-        uz: {
-          nav: {
-            home: "Bosh sahifa",
-            about: "Men haqimda",
-            experience: "Tajriba",
-            education: "Ta'lim",
-            services: "Xizmatlar",
-            cases: "Loyihalar",
-            reviews: "Fikrlar",
-            contact: "Aloqa",
-          },
-          hero: {
-            greeting: "Salom, men",
-            staticText: "Men bir ",
-            description:
-              "Zamonaviy web va mobil ilovalar yaratish bilan shug'ullanaman.",
-            cta1: "Xizmatlarim",
-            cta2: "Bog'lanish",
-            stats: {
-              experience: "Yillik Tajriba",
-              projects: "Bajarilgan Loyihalar",
-              clients: "Mijozlar",
-              satisfaction: "Mijoz Qoniqishi",
-            },
-          },
-          titles: [
-            "Creative Frontend Engineer",
-            "Software Engineer",
-            "Full Stack Developer",
-            "JavaScript Developer",
-            "React Developer",
-            "Next.js Developer",
-            "Node.js Developer",
-            "AI Developer",
-            "Clean Code Enthusiast",
-          ],
-          about: {
-            tag: "about",
-            title: "Men haqimda",
-            description:
-              "Professional full-stack developer va zamonaviy web texnologiyalari mutaxassisi",
-            text1:
-              "Men 5+ yillik tajribaga ega full-stack developer bo'lib, zamonaviy web va mobil ilovalar yaratish bilan shug'ullanaman. React, Next.js, Node.js va boshqa ilg'or texnologiyalar yordamida innovatsion yechimlar ishlab chiqaman.",
-            text2:
-              "Har bir loyihaga kreativ yondashuv va professional bajarish bilan qarayman. Mijozlar bilan uzoq muddatli hamkorlikni qadrlashaman va ularning biznesini rivojlantirishga yordam beraman.",
-            skills: {
-              frontend: {
-                title: "Frontend",
-                items: [
-                  "React & Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Vue.js",
-                ],
-              },
-              backend: {
-                title: "Backend",
-                items: [
-                  "Node.js & Express",
-                  "PostgreSQL & MongoDB",
-                  "REST & GraphQL API",
-                  "Redis & WebSocket",
-                ],
-              },
-              mobile: {
-                title: "Mobile",
-                items: [
-                  "React Native",
-                  "Expo",
-                  "Mobile UI/UX",
-                  "App Deployment",
-                ],
-              },
-              devops: {
-                title: "DevOps",
-                items: [
-                  "AWS & Vercel",
-                  "Docker & CI/CD",
-                  "Nginx & PM2",
-                  "Git & GitHub Actions",
-                ],
-              },
-            },
-          },
-          contact: {
-            tag: "contact",
-            title: "Bog'lanish",
-            description: "Loyihangiz haqida muhokama qilishga tayyorman",
-            email: "Email",
-            phone: "Telefon",
-            telegram: "Telegram",
-            github: "GitHub",
-            linkedin: "LinkedIn",
-            form: {
-              name: "Ismingiz",
-              namePlaceholder: "Ismingizni kiriting",
-              email: "Email manzilingiz",
-              emailPlaceholder: "email@example.com",
-              message: "Xabaringiz",
-              messagePlaceholder: "Loyihangiz haqida to'liqroq yozing...",
-              submit: "Xabar Yuborish",
-              sending: "Yuborilmoqda...",
-              success:
-                "✓ Xabaringiz muvaffaqiyatli yuborildi! Tez orada javob beraman.",
-            },
-          },
-          experience: {
-            tag: "experience",
-            title: "Ish Tajribam",
-            description: "Professional rivojlanish yo'lim va asosiy yutuqlarim",
-            job1: {
-              date: "2023 - Hozir",
-              title: "Senior Full-Stack Developer",
-              company: "Tech Solutions LLC",
-              description:
-                "Enterprise darajadagi web ilovalar yaratish, jamoani boshqarish va texnik arxitektura loyihalash",
-            },
-            job2: {
-              date: "2021 - 2023",
-              title: "Full-Stack Developer",
-              company: "Digital Agency Uzbekistan",
-              description:
-                "Mijozlar uchun zamonaviy web va mobil ilovalar yaratish, API integratsiyalar",
-            },
-            job3: {
-              date: "2020 - 2021",
-              title: "Frontend Developer",
-              company: "StartUp Hub",
-              description:
-                "Responsive va user-friendly interfeys yaratish, UI/UX dizayn amalga oshirish",
-            },
-          },
-          education: {
-            tag: "education",
-            title: "Ta'lim",
-            description: "Akademik ta'lim va professional sertifikatlar",
-            degree1: {
-              degree: "Bakalavr diplomi",
-              major: "Kompyuter ilmlari va dasturlash texnologiyalari",
-              school: "Termiz Davlat Universiteti",
-              year: "2016 - 2020",
-              description:
-                "Dasturlash, algoritm va ma'lumotlar tuzilmasi, web texnologiyalar asoslari",
-            },
-            cert1: {
-              degree: "Sertifikat",
-              major: "Advanced React & Next.js",
-              school: "Udemy Online Platform",
-              year: "2022",
-              description:
-                "Server-side rendering, performance optimization, advanced hooks",
-            },
-            cert2: {
-              degree: "Sertifikat",
-              major: "AWS Cloud Practitioner",
-              school: "Amazon Web Services",
-              year: "2023",
-              description:
-                "Cloud architecture, deployment strategies, scalability",
-            },
-            cert3: {
-              degree: "Sertifikat",
-              major: "Full-Stack JavaScript",
-              school: "freeCodeCamp",
-              year: "2021",
-              description: "Node.js, Express, MongoDB, RESTful API design",
-            },
-          },
-          services: {
-            tag: "services",
-            title: "Xizmatlarim",
-            description: "Sizning biznesingiz uchun professional web yechimlar",
-            popular: "OMMABOP",
-            service1: {
-              title: "Web Development",
-              description:
-                "Zamonaviy va responsive web saytlar yaratish. React, Next.js, TypeScript",
-              feature1: "Responsive dizayn",
-              feature2: "SEO optimizatsiya",
-              feature3: "Tez yuklanish",
-              feature4: "Cross-browser support",
-              price: "1000$ dan",
-            },
-            service2: {
-              title: "Full-Stack Development",
-              description:
-                "To'liq funksional web ilovalar. Frontend, Backend, Database",
-              feature1: "RESTful API",
-              feature2: "Database dizayni",
-              feature3: "Authentication",
-              feature4: "Payment integration",
-              price: "3000$ dan",
-            },
-            service3: {
-              title: "Mobile Development",
-              description: "Cross-platform mobil ilovalar. React Native, Expo",
-              feature1: "iOS & Android",
-              feature2: "Native performance",
-              feature3: "Push notifications",
-              feature4: "App Store deploy",
-              price: "2500$ dan",
-            },
-            service4: {
-              title: "UI/UX Design",
-              description: "Foydalanuvchilar uchun qulay interfeys dizayni",
-              feature1: "Wireframing",
-              feature2: "Prototype",
-              feature3: "User research",
-              feature4: "Design system",
-              price: "800$ dan",
-            },
-            service5: {
-              title: "DevOps & Deployment",
-              description: "Server sozlash, CI/CD, monitoring",
-              feature1: "AWS/Vercel setup",
-              feature2: "Docker containers",
-              feature3: "Auto deployment",
-              feature4: "Performance monitoring",
-              price: "600$ dan",
-            },
-            service6: {
-              title: "Maintenance & Support",
-              description: "Sayt va ilovalaringizni texnik qo'llab-quvvatlash",
-              feature1: "Bug fixing",
-              feature2: "Updates",
-              feature3: "Performance tuning",
-              feature4: "24/7 support",
-              price: "300$/oy",
-            },
-          },
-          cases: {
-            tag: "portfolio",
-            title: "Loyihalarim",
-            description: "Bajarilgan ishlar va muvaffaqiyatli loyihalar",
-            viewProject: "Ko'rish →",
-            case1: {
-              category: "E-commerce",
-              title: "Online Market Platform",
-              description:
-                "To'liq funksional online savdo platformasi. 10,000+ mahsulot, real-time inventory",
-              users: "Foydalanuvchilar",
-              revenue: "Sotuvlar",
-            },
-            case2: {
-              category: "SaaS Platform",
-              title: "Project Management Tool",
-              description:
-                "Jamoalar uchun loyiha boshqaruv dasturi. Real-time collaboration, task tracking",
-              companies: "Kompaniyalar",
-              satisfaction: "Qoniqish",
-            },
-            case3: {
-              category: "Mobile App",
-              title: "Fitness Tracking App",
-              description:
-                "Shaxsiy fitness treneri ilovasi. AI-powered workout plans, nutrition tracking",
-              downloads: "Yuklamalar",
-              rating: "Reyting",
-            },
-          },
-          reviews: {
-            tag: "testimonials",
-            title: "Mijozlar Fikri",
-            description: "Hamkorlarimning fikr-mulohazalari",
-            review1: {
-              text: "Dilshodbek bilan ishlash ajoyib tajriba bo'ldi! Professional yondashuv, tez bajarish va yuqori sifat. Loyihamiz kutilganidan ham yaxshi natija berdi.",
-              name: "Akmal Karimov",
-              position: "CEO, Digital Solutions",
-            },
-            review2: {
-              text: "Bizning e-commerce platformamizni yaratishda katta yordam berdi. Har bir detalga e'tibor, mijoz ehtiyojlarini tushunish - bu uning asosiy kuchi!",
-              name: "Malika Rahimova",
-              position: "Founder, ShopUz",
-            },
-            review3: {
-              text: "Mobile app loyihamizda ajoyib ish qildi. Clean code, optimal performance va deadline'larni hech qachon buzmadi. Tavsiya qilaman!",
-              name: "Sardor Usmanov",
-              position: "CTO, TechStart",
-            },
-            review4: {
-              text: "Kompaniyamiz uchun CRM tizimini yaratdi. Hamma jarayon avtomatlashtirildi, samaradorlik 3 baravarga oshdi. Rahmat!",
-              name: "Nigora Saidova",
-              position: "Manager, Business Pro",
-            },
-            review5: {
-              text: "Landing page yaratishda professional yondashuv. Conversion rate 2 baravarga oshdi. Dizayn ham, texnik tomondan ham zo'r!",
-              name: "Jasur Tursunov",
-              position: "Marketing Director, Growth Agency",
-            },
-            review6: {
-              text: "Websaytimizni SEO optimizatsiya qildi va performance'ni 10 baravarga oshirdi. Google'da birinchi sahifaga chiqdik. Ajoyib!",
-              name: "Zilola Aliyeva",
-              position: "Owner, Beauty Studio",
-            },
-          },
-          footer: {
-            rights: "© 2025 Dilshodbek Aqiyev // Barcha huquqlar himoyalangan",
-          },
-        },
-        ru: {
-          nav: {
-            home: "Главная",
-            about: "Обо мне",
-            experience: "Опыт",
-            education: "Образование",
-            services: "Услуги",
-            cases: "Проекты",
-            reviews: "Отзывы",
-            contact: "Контакты",
-          },
-          hero: {
-            greeting: "Привет, я",
-            staticText: "Я ",
-            description: "Создаю современные веб и мобильные приложения.",
-            cta1: "Мои услуги",
-            cta2: "Связаться",
-            stats: {
-              experience: "Лет опыта",
-              projects: "Завершённых проектов",
-              clients: "Клиентов",
-              satisfaction: "Удовлетворённость клиентов",
-            },
-          },
-          titles: [
-            "Креативный Frontend-разработчик",
-            "Инженер-программист",
-            "Full Stack разработчик",
-            "JavaScript разработчик",
-            "React разработчик",
-            "Next.js разработчик",
-            "Node.js разработчик",
-            "AI разработчик",
-            "Энтузиаст чистого кода",
-          ],
-          about: {
-            tag: "обо_мне",
-            title: "Обо мне",
-            description:
-              "Профессиональный full-stack разработчик и специалист современных веб-технологий",
-            text1:
-              "Я full-stack разработчик с опытом более 5 лет, специализирующийся на создании современных веб и мобильных приложений. Разрабатываю инновационные решения с использованием React, Next.js, Node.js и других передовых технологий.",
-            text2:
-              "К каждому проекту подхожу с креативностью и профессиональным исполнением. Ценю долгосрочное сотрудничество с клиентами и помогаю развивать их бизнес.",
-            skills: {
-              frontend: {
-                title: "Frontend",
-                items: [
-                  "React & Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Vue.js",
-                ],
-              },
-              backend: {
-                title: "Backend",
-                items: [
-                  "Node.js & Express",
-                  "PostgreSQL & MongoDB",
-                  "REST & GraphQL API",
-                  "Redis & WebSocket",
-                ],
-              },
-              mobile: {
-                title: "Мобильная разработка",
-                items: [
-                  "React Native",
-                  "Expo",
-                  "Mobile UI/UX",
-                  "Развертывание приложений",
-                ],
-              },
-              devops: {
-                title: "DevOps",
-                items: [
-                  "AWS & Vercel",
-                  "Docker & CI/CD",
-                  "Nginx & PM2",
-                  "Git & GitHub Actions",
-                ],
-              },
-            },
-          },
-          contact: {
-            tag: "контакты",
-            title: "Связаться со мной",
-            description: "Готов обсудить ваш проект",
-            email: "Email",
-            phone: "Телефон",
-            telegram: "Telegram",
-            github: "GitHub",
-            linkedin: "LinkedIn",
-            form: {
-              name: "Ваше имя",
-              namePlaceholder: "����ведите ваше имя",
-              email: "Ваш email",
-              emailPlaceholder: "email@example.com",
-              message: "Ваше сообщение",
-              messagePlaceholder: "Подробно расскажите о вашем проекте...",
-              submit: "Отправить сообщение",
-              sending: "Отправ��а...",
-              success: "✓ Ваше сообщение успешно отправлено! Скоро отвечу.",
-            },
-          },
-          experience: {
-            tag: "опыт",
-            title: "Мой опыт работы",
-            description:
-              "Путь профессионального развития и основные достижения",
-            job1: {
-              date: "2023 - Настоящее время",
-              title: "Senior Full-Stack разработчик",
-              company: "Tech Solutions LLC",
-              description:
-                "Создание веб-приложений корпоративного уровня, управление командой и проектирование технической архитектуры",
-            },
-            job2: {
-              date: "2021 - 2023",
-              title: "Full-Stack разработчик",
-              company: "Digital Agency Uzbekistan",
-              description:
-                "Создание современных веб и мобильных приложений для клиентов, интеграция API",
-            },
-            job3: {
-              date: "2020 - 2021",
-              title: "Frontend разработчик",
-              company: "StartUp Hub",
-              description:
-                "Создание адаптивных и удобных интерфейсов, реализация UI/UX дизайна",
-            },
-          },
-          education: {
-            tag: "образование",
-            title: "Образование",
-            description:
-              "Академическое образование и профессиональные сертификаты",
-            degree1: {
-              degree: "Диплом бакалавра",
-              major: "Компьютерные науки и технологии программирования",
-              school: "Термезский государственный университет",
-              year: "2016 - 2020",
-              description:
-                "Программирование, алгоритмы и структуры данных, основы веб-технологий",
-            },
-            cert1: {
-              degree: "Сертификат",
-              major: "Advanced React & Next.js",
-              school: "Udemy Online Platform",
-              year: "2022",
-              description:
-                "Серверный рендеринг, оптимизация производительности, продвинутые хуки",
-            },
-            cert2: {
-              degree: "Сертификат",
-              major: "AWS Cloud Practitioner",
-              school: "Amazon Web Services",
-              year: "2023",
-              description:
-                "Облачная архитектура, стратегии развертывания, масштабируемость",
-            },
-            cert3: {
-              degree: "Сертификат",
-              major: "Full-Stack JavaScript",
-              school: "freeCodeCamp",
-              year: "2021",
-              description:
-                "Node.js, Express, MongoDB, проектирование RESTful API",
-            },
-          },
-          services: {
-            tag: "услуги",
-            title: "Мои услуги",
-            description: "Профессиональные веб-решения для вашего бизнеса",
-            popular: "ПОПУЛЯРНО",
-            service1: {
-              title: "Веб-разработка",
-              description:
-                "Создание современных и адаптивных веб-сайтов. React, Next.js, TypeScript",
-              feature1: "Адаптивный дизайн",
-              feature2: "SEO оптимизация",
-              feature3: "Быстрая загрузка",
-              feature4: "Кроссбраузерность",
-              price: "от $1000",
-            },
-            service2: {
-              title: "Full-Stack разработка",
-              description:
-                "Полнофункциональные веб-приложения. Frontend, Backend, База данных",
-              feature1: "RESTful API",
-              feature2: "Дизайн БД",
-              feature3: "Аутентификация",
-              feature4: "Интеграция платежей",
-              price: "от $3000",
-            },
-            service3: {
-              title: "Мобильная разработка",
-              description:
-                "Кроссплатформенные мобильные приложения. React Native, Expo",
-              feature1: "iOS & Android",
-              feature2: "Нативная производительность",
-              feature3: "Push-уведомления",
-              feature4: "Публикация в Store",
-              price: "от $2500",
-            },
-            service4: {
-              title: "UI/UX дизайн",
-              description: "Дизайн удобного интерфейса для пользователей",
-              feature1: "Wireframing",
-              feature2: "Прототипирование",
-              feature3: "User research",
-              feature4: "Дизайн-система",
-              price: "от $800",
-            },
-            service5: {
-              title: "DevOps и развертывание",
-              description: "Настройка серверов, CI/CD, мониторинг",
-              feature1: "Настройка AWS/Vercel",
-              feature2: "Docker контейнеры",
-              feature3: "Авто-развертывание",
-              feature4: "Мониторинг производительности",
-              price: "от $600",
-            },
-            service6: {
-              title: "Поддержка и обслуживание",
-              description: "Техническая поддержка ваших сайтов и приложений",
-              feature1: "Исправление ошибок",
-              feature2: "Обновления",
-              feature3: "Настройка производительности",
-              feature4: "Поддержка 24/7",
-              price: "$300/мес",
-            },
-          },
-          cases: {
-            tag: "портфолио",
-            title: "Мои проекты",
-            description: "Выполненные работы и успешные проекты",
-            viewProject: "Посмотреть →",
-            case1: {
-              category: "E-commerce",
-              title: "Платформа онлайн-маркета",
-              description:
-                "Полнофункциональная платформа онлайн-торговли. 10,000+ товаров, инвентарь в реальном времени",
-              users: "Пользователей",
-              revenue: "Продаж",
-            },
-            case2: {
-              category: "SaaS платформа",
-              title: "Инструмент управления проектами",
-              description:
-                "Программа управления проектами для команд. Совместная работа в реальном времени, отслеживание задач",
-              companies: "Компаний",
-              satisfaction: "Удовлетворенность",
-            },
-            case3: {
-              category: "Мобильное приложение",
-              title: "Приложение для фитнеса",
-              description:
-                "Приложение личного фитнес-тренера. Планы тренировок на основе AI, отслеживание питания",
-              downloads: "Загрузок",
-              rating: "Рейтинг",
-            },
-          },
-          reviews: {
-            tag: "отзывы",
-            title: "Отзывы клиентов",
-            description: "Отзывы моих партнеров",
-            review1: {
-              text: "Работать с Дильшодбеком было потрясающе! Профессиональный подход, быстрое выполнение и высокое качество. Наш проект превзошел ожидания.",
-              name: "Акмал Каримов",
-              position: "CEO, Digital Solutions",
-            },
-            review2: {
-              text: "Очень помог в создании нашей e-commerce платформы. Внимание к каждой детали, понимание потребностей клиента - это его главная сила!",
-              name: "Малика Рахимова",
-              position: "Основатель, ShopUz",
-            },
-            review3: {
-              text: "Отлично поработал над нашим mobile app проектом. Чистый код, оптимальная производительность и никогда не нарушал дедлайны. Рекомендую!",
-              name: "Сардор Усманов",
-              position: "CTO, TechStart",
-            },
-            review4: {
-              text: "Создал CRM систему для нашей компании. Все процессы автоматизированы, эффективность выросла в 3 раза. Спасибо!",
-              name: "Нигора Саидова",
-              position: "Менеджер, Business Pro",
-            },
-            review5: {
-              text: "Профессиональный подход к созданию landing page. Conversion rate вырос в 2 раза. Отлично и с дизайном, и технически!",
-              name: "Жасур Турсунов",
-              position: "Директор по маркетингу, Growth Agency",
-            },
-            review6: {
-              text: "Оптимизировал наш сайт для SEO и повысил производительность в 10 раз. Вышли на первую страницу Google. Потрясающе!",
-              name: "Зилола Алиева",
-              position: "Владелец, Beauty Studio",
-            },
-          },
-          footer: { rights: "© 2025 Дильшодбек Акиев // Все права защищены" },
-        },
-        en: {
-          nav: {
-            home: "Home",
-            about: "About",
-            experience: "Experience",
-            education: "Education",
-            services: "Services",
-            cases: "Case Studies",
-            reviews: "Reviews",
-            contact: "Contact",
-          },
-          hero: {
-            greeting: "Hi, I'm",
-            staticText: "I'm a ",
-            description: "I create modern web and mobile applications.",
-            cta1: "My Services",
-            cta2: "Get in Touch",
-            stats: {
-              experience: "Years Experience",
-              projects: "Completed Projects",
-              clients: "Happy Clients",
-              satisfaction: "Client Satisfaction",
-            },
-          },
-          titles: [
-            "Creative Frontend Engineer",
-            "Software Engineer",
-            "Full Stack Developer",
-            "JavaScript Developer",
-            "React Developer",
-            "Next.js Developer",
-            "Node.js Developer",
-            "AI Developer",
-            "Clean Code Enthusiast",
-          ],
-          about: {
-            tag: "about",
-            title: "About Me",
-            description:
-              "Professional full-stack developer and modern web technology specialist",
-            text1:
-              "I'm a full-stack developer with 5+ years of experience, specializing in creating modern web and mobile applications. I develop innovative solutions using React, Next.js, Node.js and other advanced technologies.",
-            text2:
-              "I approach each project with creativity and professional execution. I value long-term partnerships with clients and help grow their business.",
-            skills: {
-              frontend: {
-                title: "Frontend",
-                items: [
-                  "React & Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Vue.js",
-                ],
-              },
-              backend: {
-                title: "Backend",
-                items: [
-                  "Node.js & Express",
-                  "PostgreSQL & MongoDB",
-                  "REST & GraphQL API",
-                  "Redis & WebSocket",
-                ],
-              },
-              mobile: {
-                title: "Mobile",
-                items: [
-                  "React Native",
-                  "Expo",
-                  "Mobile UI/UX",
-                  "App Deployment",
-                ],
-              },
-              devops: {
-                title: "DevOps",
-                items: [
-                  "AWS & Vercel",
-                  "Docker & CI/CD",
-                  "Nginx & PM2",
-                  "Git & GitHub Actions",
-                ],
-              },
-            },
-          },
-          contact: {
-            tag: "contact",
-            title: "Get in Touch",
-            description: "Ready to discuss your project",
-            email: "Email",
-            phone: "Phone",
-            telegram: "Telegram",
-            github: "GitHub",
-            linkedin: "LinkedIn",
-            form: {
-              name: "Your Name",
-              namePlaceholder: "Enter your name",
-              email: "Your Email",
-              emailPlaceholder: "email@example.com",
-              message: "Your Message",
-              messagePlaceholder: "Tell me more about your project...",
-              submit: "Send Message",
-              sending: "Sending...",
-              success:
-                "✓ Your message has been sent successfully! I'll respond soon.",
-            },
-          },
-          experience: {
-            tag: "experience",
-            title: "My Work Experience",
-            description: "Professional development path and key achievements",
-            job1: {
-              date: "2023 - Present",
-              title: "Senior Full-Stack Developer",
-              company: "Tech Solutions LLC",
-              description:
-                "Building enterprise-level web applications, team management and technical architecture design",
-            },
-            job2: {
-              date: "2021 - 2023",
-              title: "Full-Stack Developer",
-              company: "Digital Agency Uzbekistan",
-              description:
-                "Creating modern web and mobile applications for clients, API integrations",
-            },
-            job3: {
-              date: "2020 - 2021",
-              title: "Frontend Developer",
-              company: "StartUp Hub",
-              description:
-                "Creating responsive and user-friendly interfaces, implementing UI/UX design",
-            },
-          },
-          education: {
-            tag: "education",
-            title: "Education",
-            description: "Academic education and professional certificates",
-            degree1: {
-              degree: "Bachelor's Degree",
-              major: "Computer Science and Programming Technologies",
-              school: "Termez State University",
-              year: "2016 - 2020",
-              description:
-                "Programming, algorithms and data structures, web technology fundamentals",
-            },
-            cert1: {
-              degree: "Certificate",
-              major: "Advanced React & Next.js",
-              school: "Udemy Online Platform",
-              year: "2022",
-              description:
-                "Server-side rendering, performance optimization, advanced hooks",
-            },
-            cert2: {
-              degree: "Certificate",
-              major: "AWS Cloud Practitioner",
-              school: "Amazon Web Services",
-              year: "2023",
-              description:
-                "Cloud architecture, deployment strategies, scalability",
-            },
-            cert3: {
-              degree: "Certificate",
-              major: "Full-Stack JavaScript",
-              school: "freeCodeCamp",
-              year: "2021",
-              description: "Node.js, Express, MongoDB, RESTful API design",
-            },
-          },
-          services: {
-            tag: "services",
-            title: "My Services",
-            description: "Professional web solutions for your business",
-            popular: "POPULAR",
-            service1: {
-              title: "Web Development",
-              description:
-                "Creating modern and responsive websites. React, Next.js, TypeScript",
-              feature1: "Responsive design",
-              feature2: "SEO optimization",
-              feature3: "Fast loading",
-              feature4: "Cross-browser support",
-              price: "from $1000",
-            },
-            service2: {
-              title: "Full-Stack Development",
-              description:
-                "Fully functional web applications. Frontend, Backend, Database",
-              feature1: "RESTful API",
-              feature2: "Database design",
-              feature3: "Authentication",
-              feature4: "Payment integration",
-              price: "from $3000",
-            },
-            service3: {
-              title: "Mobile Development",
-              description:
-                "Cross-platform mobile applications. React Native, Expo",
-              feature1: "iOS & Android",
-              feature2: "Native performance",
-              feature3: "Push notifications",
-              feature4: "App Store deploy",
-              price: "from $2500",
-            },
-            service4: {
-              title: "UI/UX Design",
-              description: "User-friendly interface design",
-              feature1: "Wireframing",
-              feature2: "Prototype",
-              feature3: "User research",
-              feature4: "Design system",
-              price: "from $800",
-            },
-            service5: {
-              title: "DevOps & Deployment",
-              description: "Server setup, CI/CD, monitoring",
-              feature1: "AWS/Vercel setup",
-              feature2: "Docker containers",
-              feature3: "Auto deployment",
-              feature4: "Performance monitoring",
-              price: "from $600",
-            },
-            service6: {
-              title: "Maintenance & Support",
-              description: "Technical support for your sites and applications",
-              feature1: "Bug fixing",
-              feature2: "Updates",
-              feature3: "Performance tuning",
-              feature4: "24/7 support",
-              price: "$300/month",
-            },
-          },
-          cases: {
-            tag: "portfolio",
-            title: "My Projects",
-            description: "Completed works and successful projects",
-            viewProject: "View →",
-            case1: {
-              category: "E-commerce",
-              title: "Online Market Platform",
-              description:
-                "Fully functional online trading platform. 10,000+ products, real-time inventory",
-              users: "Users",
-              revenue: "Sales",
-            },
-            case2: {
-              category: "SaaS Platform",
-              title: "Project Management Tool",
-              description:
-                "Project management software for teams. Real-time collaboration, task tracking",
-              companies: "Companies",
-              satisfaction: "Satisfaction",
-            },
-            case3: {
-              category: "Mobile App",
-              title: "Fitness Tracking App",
-              description:
-                "Personal fitness trainer app. AI-powered workout plans, nutrition tracking",
-              downloads: "Downloads",
-              rating: "Rating",
-            },
-          },
-          reviews: {
-            tag: "testimonials",
-            title: "Client Reviews",
-            description: "Feedback from my partners",
-            review1: {
-              text: "Working with Dilshodbek was an amazing experience! Professional approach, fast delivery and high quality. Our project exceeded expectations.",
-              name: "Akmal Karimov",
-              position: "CEO, Digital Solutions",
-            },
-            review2: {
-              text: "He was a great help in creating our e-commerce platform. Attention to every detail, understanding client needs - that's his main strength!",
-              name: "Malika Rahimova",
-              position: "Founder, ShopUz",
-            },
-            review3: {
-              text: "Did excellent work on our mobile app project. Clean code, optimal performance and never missed deadlines. Highly recommend!",
-              name: "Sardor Usmanov",
-              position: "CTO, TechStart",
-            },
-            review4: {
-              text: "Created a CRM system for our company. All processes are automated, efficiency increased 3 times. Thank you!",
-              name: "Nigora Saidova",
-              position: "Manager, Business Pro",
-            },
-            review5: {
-              text: "Professional approach to creating landing pages. Conversion rate doubled. Great both in design and technically!",
-              name: "Jasur Tursunov",
-              position: "Marketing Director, Growth Agency",
-            },
-            review6: {
-              text: "Optimized our website for SEO and increased performance 10 times. We made it to Google's first page. Amazing!",
-              name: "Zilola Aliyeva",
-              position: "Owner, Beauty Studio",
-            },
-          },
-          footer: { rights: "© 2025 Dilshodbek Aqiyev // All rights reserved" },
-        },
-      };
-
-      let currentLang = localStorage.getItem("language") || "uz";
-      let currentTheme = localStorage.getItem("theme") || "dark";
-
-      // Initialize theme
-      document.documentElement.setAttribute("data-theme", currentTheme);
-      document.getElementById("themeIcon").textContent =
-        currentTheme === "dark" ? "🌙" : "☀️";
-
-      // Theme toggle
-      document.getElementById("themeToggle").addEventListener("click", () => {
-        currentTheme = currentTheme === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", currentTheme);
-        document.getElementById("themeIcon").textContent =
-          currentTheme === "dark" ? "🌙" : "☀️";
-        localStorage.setItem("theme", currentTheme);
-      });
-
-      // Language toggle
-      const langToggle = document.getElementById("langToggle");
-      const langMenu = document.getElementById("langMenu");
-
-      langToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        langMenu.classList.toggle("active");
-      });
-
-      document.addEventListener("click", () => {
-        langMenu.classList.remove("active");
-      });
-
-      document.querySelectorAll(".lang-option").forEach((option) => {
-        option.addEventListener("click", (e) => {
-          e.stopPropagation();
-          const lang = option.getAttribute("data-lang");
-          setLanguage(lang);
-          langMenu.classList.remove("active");
-        });
-      });
-
-      function setLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem("language", lang);
-        updateLanguage();
-        updateActiveLanguage();
-        restartTypingAnimation();
-      }
-
-      function updateLanguage() {
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-          const key = el.getAttribute("data-i18n");
-          const text = getNestedTranslation(translations[currentLang], key);
-          if (text) el.textContent = text;
-        });
-
-        document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
-          const key = el.getAttribute("data-i18n-placeholder");
-          const text = getNestedTranslation(translations[currentLang], key);
-          if (text) el.placeholder = text;
-        });
-
-        document.querySelectorAll("[data-i18n-list]").forEach((el) => {
-          const key = el.getAttribute("data-i18n-list");
-          const items = getNestedTranslation(translations[currentLang], key);
-          if (Array.isArray(items)) {
-            el.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
-          }
-        });
-      }
-
-      function getNestedTranslation(obj, path) {
-        return path.split(".").reduce((prev, curr) => prev?.[curr], obj);
-      }
-
-      function updateActiveLanguage() {
-        document.querySelectorAll(".lang-option").forEach((option) => {
-          option.classList.toggle(
-            "active",
-            option.getAttribute("data-lang") === currentLang
-          );
-        });
-      }
-
-      // Typing Animation
-      let titleIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
-      let typingSpeed = 80;
-      const animatedText = document.getElementById("animatedText");
-
-      function typeTitle() {
-        const currentTitles = translations[currentLang].titles;
-        const currentTitle = currentTitles[titleIndex];
-
-        if (isDeleting) {
-          animatedText.textContent = currentTitle.substring(0, charIndex - 1);
-          charIndex--;
-          typingSpeed = 40;
-        } else {
-          animatedText.textContent = currentTitle.substring(0, charIndex + 1);
-          charIndex++;
-          typingSpeed = 80;
-        }
-
-        if (!isDeleting && charIndex === currentTitle.length) {
-          typingSpeed = 1200;
-          isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-          isDeleting = false;
-          titleIndex = (titleIndex + 1) % currentTitles.length;
-          typingSpeed = 300;
-        }
-
-        setTimeout(typeTitle, typingSpeed);
-      }
-
-      function restartTypingAnimation() {
-        titleIndex = 0;
-        charIndex = 0;
-        isDeleting = false;
-        animatedText.textContent = "";
-      }
-
-      // Initialize
-      updateLanguage();
-      updateActiveLanguage();
-      typeTitle();
-
-      // Default Config
-      const defaultConfig = {
-        meta_title:
-          "Dilshodbek Aqiyev - Full-Stack Developer & UI/UX Enthusiast | Portfolio",
-        meta_description:
-          "Professional full-stack web developer. React, Next.js, Node.js va zamonaviy texnologiyalar bilan 5+ yillik tajriba.",
-        meta_keywords:
-          "web developer, full-stack developer, react developer, next.js developer",
-        full_name: "Dilshodbek Aqiyev",
-        tagline: "Full-Stack Developer & UI/UX Enthusiast",
-        hero_text:
-          "Zamonaviy web va mobil ilovalar yaratish bilan shug'ullanaman",
-        about_title: "Men haqimda",
-        about_description:
-          "Professional full-stack developer va zamonaviy web texnologiyalari mutaxassisi",
-        university_name: "Termiz Davlat Universiteti",
-        degree_name: "Kompyuter ilmlari va dasturlash texnologiyalari",
-        email_address: "info@dilshodbekaqiyev.uz",
-        phone_number: "+998 90 123 45 67",
-        telegram_username: "@dilshodbekaqiyev",
-        github_username: "dilshodbekaqiyev",
-        linkedin_username: "dilshodbekaqiyev",
-      };
-
-      async function onConfigChange(config) {
-        const pageTitle = document.getElementById("page-title");
-        const metaTitle = document.getElementById("meta-title");
-        const metaDescription = document.getElementById("meta-description");
-        const metaKeywords = document.getElementById("meta-keywords");
-
-        const title = config.meta_title || defaultConfig.meta_title;
-        const description =
-          config.meta_description || defaultConfig.meta_description;
-        const keywords = config.meta_keywords || defaultConfig.meta_keywords;
-
-        if (pageTitle) pageTitle.textContent = title;
-        if (metaTitle) metaTitle.setAttribute("content", title);
-        if (metaDescription)
-          metaDescription.setAttribute("content", description);
-        if (metaKeywords) metaKeywords.setAttribute("content", keywords);
-
-        const heroName = document.getElementById("hero-name");
-        if (heroName)
-          heroName.textContent = config.full_name || defaultConfig.full_name;
-
-        const aboutTitle = document.getElementById("about-title");
-        if (aboutTitle)
-          aboutTitle.textContent =
-            config.about_title || defaultConfig.about_title;
-
-        const contactEmailValue = document.getElementById(
-          "contact-email-value"
-        );
-        const contactPhoneValue = document.getElementById(
-          "contact-phone-value"
-        );
-        const contactTelegramValue = document.getElementById(
-          "contact-telegram-value"
-        );
-        const contactGithubValue = document.getElementById(
-          "contact-github-value"
-        );
-        const contactLinkedinValue = document.getElementById(
-          "contact-linkedin-value"
-        );
-
-        if (contactEmailValue)
-          contactEmailValue.textContent =
-            config.email_address || defaultConfig.email_address;
-        if (contactPhoneValue)
-          contactPhoneValue.textContent =
-            config.phone_number || defaultConfig.phone_number;
-        if (contactTelegramValue)
-          contactTelegramValue.textContent =
-            config.telegram_username || defaultConfig.telegram_username;
-        if (contactGithubValue)
-          contactGithubValue.textContent =
-            config.github_username || defaultConfig.github_username;
-        if (contactLinkedinValue)
-          contactLinkedinValue.textContent =
-            config.linkedin_username || defaultConfig.linkedin_username;
-      }
-
-      if (window.elementSdk) {
-        window.elementSdk.init({
-          defaultConfig: defaultConfig,
-          onConfigChange: onConfigChange,
-          mapToCapabilities: () => ({
-            recolorables: [],
-            borderables: [],
-            fontEditable: undefined,
-            fontSizeable: undefined,
-          }),
-          mapToEditPanelValues: (config) =>
-            new Map([
-              ["meta_title", config.meta_title || defaultConfig.meta_title],
-              [
-                "meta_description",
-                config.meta_description || defaultConfig.meta_description,
-              ],
-              [
-                "meta_keywords",
-                config.meta_keywords || defaultConfig.meta_keywords,
-              ],
-              ["full_name", config.full_name || defaultConfig.full_name],
-              ["tagline", config.tagline || defaultConfig.tagline],
-              ["hero_text", config.hero_text || defaultConfig.hero_text],
-              ["about_title", config.about_title || defaultConfig.about_title],
-              [
-                "about_description",
-                config.about_description || defaultConfig.about_description,
-              ],
-              [
-                "university_name",
-                config.university_name || defaultConfig.university_name,
-              ],
-              ["degree_name", config.degree_name || defaultConfig.degree_name],
-              [
-                "email_address",
-                config.email_address || defaultConfig.email_address,
-              ],
-              [
-                "phone_number",
-                config.phone_number || defaultConfig.phone_number,
-              ],
-              [
-                "telegram_username",
-                config.telegram_username || defaultConfig.telegram_username,
-              ],
-              [
-                "github_username",
-                config.github_username || defaultConfig.github_username,
-              ],
-              [
-                "linkedin_username",
-                config.linkedin_username || defaultConfig.linkedin_username,
-              ],
-            ]),
-        });
-      }
-
-      // Contact Form
-      const contactForm = document.getElementById("contactForm");
-      const submitButton = document.getElementById("submitButton");
-      const formMessage = document.getElementById("formMessage");
-
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        submitButton.disabled = true;
-        submitButton.innerHTML = `<span>${translations[currentLang].contact.form.sending}</span>`;
-
-        setTimeout(() => {
-          formMessage.className = "form-message success";
-          formMessage.textContent =
-            translations[currentLang].contact.form.success;
-
-          contactForm.reset();
-          submitButton.disabled = false;
-          submitButton.innerHTML = `<span>${translations[currentLang].contact.form.submit}</span><span>→</span>`;
-
-          setTimeout(() => {
-            formMessage.style.display = "none";
-          }, 5000);
-        }, 1500);
-      });
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            const offsetTop = target.offsetTop - 80;
-            window.scrollTo({ top: offsetTop, behavior: "smooth" });
-          }
-        });
-      });
-    </script>
-    <script>
-      (function () {
-        function c() {
-          var b = a.contentDocument || a.contentWindow.document;
-          if (b) {
-            var d = b.createElement("script");
-            d.innerHTML =
-              "window.__CF$cv$params={r:'9a295fe8c0d02600',t:'MTc2MzgyNDQ0Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-            b.getElementsByTagName("head")[0].appendChild(d);
-          }
-        }
-        if (document.body) {
-          var a = document.createElement("iframe");
-          a.height = 1;
-          a.width = 1;
-          a.style.position = "absolute";
-          a.style.top = 0;
-          a.style.left = 0;
-          a.style.border = "none";
-          a.style.visibility = "hidden";
-          document.body.appendChild(a);
-          if ("loading" !== document.readyState) c();
-          else if (window.addEventListener)
-            document.addEventListener("DOMContentLoaded", c);
-          else {
-            var e = document.onreadystatechange || function () {};
-            document.onreadystatechange = function (b) {
-              e(b);
-              "loading" !== document.readyState &&
-                ((document.onreadystatechange = e), c());
-            };
-          }
-        }
-      })();
-    </script></body
-  >
+    <script type="text/javascript" src="./index.js" />
+  </body>
 </html>
